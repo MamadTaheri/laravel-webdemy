@@ -7,10 +7,11 @@
             <div>
                 <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
                     <p>For more information visit website</p>
-                    <b-button variant="primary" href="#">More Info</b-button>
+                    <b-button variant="primary" href="#">Browse Course</b-button>
                 </b-jumbotron>
             </div>
         </section>
+        
         <section>
             <div>
                 <b-card-group deck>
@@ -45,6 +46,17 @@
                 </b-card-group>
               </div>
         </section>
+
+        <section>
+            <pricing></pricing>
+        </section>
+
+
+
+
+
+
+
     </div>
 
 @endsection
