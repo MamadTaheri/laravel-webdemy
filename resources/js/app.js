@@ -7,6 +7,10 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /**
  * The following block of code may be used to automatically register your
