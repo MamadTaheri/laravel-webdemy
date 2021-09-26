@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Series;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        Series::factory(10)->create();
+        Series::factory(10)->create()->each(function($series){
+            $series->videos()->saveMany(Video::factory(10)->make());
+        });
     }
 }
