@@ -9,8 +9,15 @@ class Video extends Model
 {
     use HasFactory;
 
+    protected $appends = ['url'];
+
     public function series()
     {
        return $this->belongsTo(Series::class);
+    }
+
+    public function getUrlAttribute()
+    {
+       return route('series.episode', [$this->series, $this->episode_number]);
     }
 }
