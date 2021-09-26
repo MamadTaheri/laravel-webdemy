@@ -4,12 +4,15 @@
 
     <div class="container">
         <section>
-            <div>
-                <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
-                    <p>For more information visit website</p>
-                    <b-button variant="primary" href="{{route('series.index')}}">Browse Course</b-button>
-                </b-jumbotron>
-            </div>
+            <div class="jumbotron">
+                <h1 class="display-4">Online series</h1>
+                <p class="lead">Ir Dev Progs</p>
+                <hr class="my-4">
+                <p>Learn with state-of-the-art online courses</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="{{route('series.index')}}" role="button">Browse Courses</a>
+                </p>
+              </div>
         </section>
 
         <section>
