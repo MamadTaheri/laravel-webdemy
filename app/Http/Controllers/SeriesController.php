@@ -83,4 +83,11 @@ class SeriesController extends Controller
     {
         //
     }
+
+    public function episode(Series $series, $episodeNumber)
+    {
+        $video= $series->videos()->where('episode_number',$episodeNumber)->first();
+        
+       return view('front.series.video', compact('series','episodeNumber','video'));
+    }
 }
