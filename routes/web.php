@@ -22,4 +22,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/series', [App\Http\Controllers\SeriesController::class, 'index'])->name('series.index');
+Route::resource('/series', App\Http\Controllers\SeriesController::class);
