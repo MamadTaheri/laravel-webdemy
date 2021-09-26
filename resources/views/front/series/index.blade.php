@@ -9,10 +9,10 @@
                 <b-row>
                     @foreach ($series as $s)
                     <b-col cols="4" class="text-center">
-                        <b-card title={{ $s->title }} img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+                        <b-card title={{ $s->title }} img-src="{{asset('images/s21.jpg')}}" img-alt="Image" img-top>
                             <b-card-text> {{ \Str::words($s->description, 10)  }} </b-card-text>
                             <template justify="center" #footer>
-                                <b-button href="#" variant="primary">Play</b-button>
+                                <b-button href="{{route('series.show', $s->id)}}" variant="primary">Play</b-button>
                            </template>
                         </b-card>
                     </b-col>
