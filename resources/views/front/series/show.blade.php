@@ -11,9 +11,7 @@
             <a class="btn btn-primary" href="#">Start Series</a>
             <a class="btn btn-success" href="#">Subscribe</a>
         </div>
-    </section>
-
-    {{-- {{$series->videos}} --}}
+    </section> 
 
     <section class="mb-3">
         <h3 class="mb-3 text-center">Episodes</h3>
