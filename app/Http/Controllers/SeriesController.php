@@ -47,7 +47,7 @@ class SeriesController extends Controller
      */
     public function show(Series $series)
     {
-        //
+        return view('front.series.show');
     }
 
     /**
