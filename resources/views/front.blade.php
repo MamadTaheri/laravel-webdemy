@@ -19,7 +19,11 @@
             <div>
                 <b-card-group deck>
                     @foreach ($featuredSeries as $series)
-                         <b-card title={{ $series->title }} img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+                         <b-card
+                         title={{ $series->title }}
+                         img-src={{ $series->image ? asset('storage/'.$series->image) : asset('images/s21.jpg')}}
+                         img-alt="Image"
+                         img-top>
                             <b-card-text> {{ \Str::words($series->description, 10, '...')  }} </b-card-text>
                             <template #footer>
                                  <small class="text-muted">Last updated 3 mins ago</small>
