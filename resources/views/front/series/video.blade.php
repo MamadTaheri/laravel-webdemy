@@ -9,6 +9,9 @@
             <source src="{{asset('videos/test.mp4')}}" type="video/mp4">
                 Your browser does not support the video tag
         </video>
+
+        {{-- Video player component --}}
+        {{-- <video-player :video="{{$video}}"></video-player> --}}
     </section>
 
     <section class="mb-5 pt-5 text-center">
