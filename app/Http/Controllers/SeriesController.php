@@ -15,7 +15,13 @@ class SeriesController extends Controller
     public function index()
     {
         $series = Series::paginate(10);
-        return view('front.series.index', compact('series'));
+        $breadCrumbs = [
+            [
+                'text' => 'Series',
+                'active' => true
+            ],
+        ];
+        return view('front.series.index', compact('series','breadCrumbs'));
     }
 
     /**
@@ -45,9 +51,22 @@ class SeriesController extends Controller
      * @param  \App\Models\Series  $series
      * @return \Illuminate\Http\Response
      */
-    public function show(Series $series)
+    public function show($title)
     {
-        return view('front.series.show', compact('series'));
+        $series = Series::where('title',$title)->first();
+
+        $breadCrumbs = [
+            [
+                'text' => 'Series',
+                'href' => route('series.index')
+            ],
+            [
+                'text' => $series->title,
+                'active' => true
+            ],
+        ];
+
+        return view('front.series.show', compact('series','breadCrumbs'));
     }
 
     /**
@@ -84,8 +103,9 @@ class SeriesController extends Controller
         //
     }
 
-    public function episode(Series $series, $episodeNumber)
+    public function episode($title, $episodeNumber)
     {
+        $series = Series::where('title',$title)->first();
         $video= $series->videos()->where('episode_number',$episodeNumber)->first();
         $nextVideo= $series->videos()->where('episode_number',$episodeNumber+1)->first();
 
@@ -98,7 +118,7 @@ class SeriesController extends Controller
             ],
             [
                 'text' => $series->title,
-                'href' => route('series.show',$series)
+                'href' => route('series.show',$series->title)
             ],
             [
                 'text' => $video->episode_number . "_ " . $video->title,
