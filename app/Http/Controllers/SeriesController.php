@@ -101,7 +101,7 @@ class SeriesController extends Controller
                 'href' => route('series.show',$series)
             ],
             [
-                'text' => $video->title,
+                'text' => $video->episode_number . "_ " . $video->title,
                 'active' => true
             ],
         ];
