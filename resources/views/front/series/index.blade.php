@@ -3,6 +3,7 @@
 @section('content')
 
     <b-container>
+    <b-breadcrumb :items="{{json_encode($breadCrumbs)}}">salam</b-breadcrumb>
 
         <section class="mb-5">
             <div>
@@ -14,7 +15,7 @@
                             img-alt="Image" img-top>
                             <b-card-text> {{ \Str::words($s->description, 10)  }} </b-card-text>
                             <template justify="center" #footer>
-                                <b-button href="{{route('series.show', $s->id)}}" variant="primary">Play</b-button>
+                                <b-button href="{{route('series.show', $s->title)}}" variant="primary">Play</b-button>
                            </template>
                         </b-card>
                     </b-col>
@@ -29,12 +30,6 @@
             <pricing></pricing>
         </section>
 
-
-
     </b-container>
-
-
-
-
 
 @endsection
