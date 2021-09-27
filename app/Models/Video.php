@@ -18,6 +18,6 @@ class Video extends Model
 
     public function getUrlAttribute()
     {
-       return route('series.episode', [$this->series, $this->episode_number]);
+       return route('series.episode', [$this->series->title, $this->episode_number]);
     }
 }
