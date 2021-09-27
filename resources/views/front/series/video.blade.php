@@ -4,14 +4,20 @@
 
 <b-container>
     <h2 class="mb-2 mb-md-5">Video Player</h2>
+    <b-breadcrumb :items="{{json_encode($breadCrumbs)}}">salam</b-breadcrumb>
+
     <section class="d-flex justify-content-center">
         <video controls>
             <source src="{{asset('videos/test.mp4')}}" type="video/mp4">
                 Your browser does not support the video tag
         </video>
 
+
         {{-- Video player component --}}
         {{-- <video-player :video="{{$video}}"></video-player> --}}
+    </section>
+    <section class="m2 m-md-5">
+        <h3><a href="{{$nextVideoUrl}}" class="text-decoration-none text-primary">Play Next Video</a></h3>
     </section>
 
     <section class="mb-5 pt-5 text-center">

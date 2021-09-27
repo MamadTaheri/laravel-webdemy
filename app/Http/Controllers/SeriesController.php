@@ -87,7 +87,25 @@ class SeriesController extends Controller
     public function episode(Series $series, $episodeNumber)
     {
         $video= $series->videos()->where('episode_number',$episodeNumber)->first();
-        
-       return view('front.series.video', compact('series','episodeNumber','video'));
+        $nextVideo= $series->videos()->where('episode_number',$episodeNumber+1)->first();
+
+        $nextVideoUrl = $nextVideo->url ?? null;
+
+        $breadCrumbs = [
+            [
+                'text' => 'Series',
+                'href' => route('series.index')
+            ],
+            [
+                'text' => $series->title,
+                'href' => route('series.show',$series)
+            ],
+            [
+                'text' => $video->title,
+                'active' => true
+            ],
+        ];
+
+       return view('front.series.video', compact('series','episodeNumber','video','nextVideoUrl','breadCrumbs' ));
     }
 }
